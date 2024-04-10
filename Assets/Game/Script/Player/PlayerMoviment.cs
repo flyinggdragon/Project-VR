@@ -22,5 +22,22 @@ public class PlayerMoviment : MonoBehaviour {
 
     void Update() {
         transform.localRotation = gyro.attitude * rot;
+        for (int i = 0; i < Input.touchCount; ++i) {
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    if (hit.collider.tag == "Fish")
+                    {
+                        Debug.Log("Fish touched!");
+                    } else if (hit.collider.tag == "Trash")
+                    {
+                        Debug.Log("Trash touched!");
+                    }
+                }
+            }
+        }
     }
 }
