@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 public class PlayerMoviment : MonoBehaviour {
-
+    /*
     private GameObject cameraContainer;
     private Quaternion rot;
     private Gyroscope gyro;
@@ -40,4 +40,5 @@ public class PlayerMoviment : MonoBehaviour {
             }
         }
     }
+    */
 }
