@@ -16,6 +16,8 @@ public class Fish : MonoBehaviour
     private float timer;
     private Quaternion targetRotation;
 
+    //public FishData fishData;
+
     // Start is called before the first frame update
     void Start()
     {
