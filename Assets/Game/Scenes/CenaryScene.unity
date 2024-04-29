@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle1_2
       objectReference: {fileID: 0}
+    - target: {fileID: 140520, guid: dd9608af606942d40866ed841b2910bd, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     - target: {fileID: 432792, guid: dd9608af606942d40866ed841b2910bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.035095
@@ -414,6 +418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 695cb951c9e5b2e4ebc1baccb673fbb2, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 695cb951c9e5b2e4ebc1baccb673fbb2, type: 3}
       propertyPath: m_LocalScale.x
       value: 5.2161
@@ -544,6 +552,10 @@ PrefabInstance:
     - target: {fileID: 103030, guid: 8b342121ff2be5a45b964062c2ec412f, type: 3}
       propertyPath: m_Name
       value: Bottle3_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 103030, guid: 8b342121ff2be5a45b964062c2ec412f, type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 415388, guid: 8b342121ff2be5a45b964062c2ec412f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -703,6 +715,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 732e1541ef6df474e8dc4d00f3f1897a, type: 3}
       propertyPath: m_Name
       value: Dolphin
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 732e1541ef6df474e8dc4d00f3f1897a, type: 3}
+      propertyPath: m_TagString
+      value: Fish
       objectReference: {fileID: 0}
     - target: {fileID: 3734473179033305549, guid: 732e1541ef6df474e8dc4d00f3f1897a, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -1045,6 +1061,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle4
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c508bee724909024ebabc106ffc525ee, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c508bee724909024ebabc106ffc525ee, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.80603623
@@ -1114,6 +1134,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cfd21ef8050231440a7ccd68a5517483, type: 3}
       propertyPath: m_Name
       value: Bottle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cfd21ef8050231440a7ccd68a5517483, type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cfd21ef8050231440a7ccd68a5517483, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1415,6 +1439,10 @@ PrefabInstance:
     - target: {fileID: 102526, guid: 3667125f3eed893459ad620dfedcca53, type: 3}
       propertyPath: m_Name
       value: Bottle4_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 102526, guid: 3667125f3eed893459ad620dfedcca53, type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 493030, guid: 3667125f3eed893459ad620dfedcca53, type: 3}
       propertyPath: m_LocalScale.x
@@ -2370,6 +2398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bottle1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 695cb951c9e5b2e4ebc1baccb673fbb2, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 695cb951c9e5b2e4ebc1baccb673fbb2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.6193237
@@ -2431,6 +2463,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e41b4f9459c489a4596e740b61a3dcf1, type: 3}
       propertyPath: m_Name
       value: BottleOfBeer
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e41b4f9459c489a4596e740b61a3dcf1, type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e41b4f9459c489a4596e740b61a3dcf1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2676,6 +2712,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bfe4bd7ca2c7a254dbc9bcd23bb71cbe, type: 3}
       propertyPath: m_Name
       value: BottleOfWater
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bfe4bd7ca2c7a254dbc9bcd23bb71cbe, type: 3}
+      propertyPath: m_TagString
+      value: Trash
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bfe4bd7ca2c7a254dbc9bcd23bb71cbe, type: 3}
       propertyPath: m_LocalPosition.x

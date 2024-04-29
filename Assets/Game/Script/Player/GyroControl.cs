@@ -50,6 +50,10 @@ public class GyroTouchControl : MonoBehaviour
         }
 
         HandleTouchInput();
+
+        if (Input.GetKey(KeyCode.I)) {
+            GameManager.score++;
+        }
     }
 
     private void HandleTouchInput()
@@ -66,9 +70,10 @@ public class GyroTouchControl : MonoBehaviour
                     Ray ray = Camera.main.ScreenPointToRay(touch.position);
                     if (Physics.Raycast(ray, out hit))
                     {
-                        if (hit.collider.gameObject == lixo)
+                        if (hit.collider.CompareTag("Trash"))
                         {
                             Debug.Log("Lixo Coletado!");
+                            Destroy(hit.collider.gameObject);
                         }
                     }
                     break;
