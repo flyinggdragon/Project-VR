@@ -51,9 +51,6 @@ public class GyroTouchControl : MonoBehaviour
 
         HandleTouchInput();
 
-        if (Input.GetKey(KeyCode.I)) {
-            GameManager.score++;
-        }
     }
 
     private void HandleTouchInput()
@@ -72,6 +69,7 @@ public class GyroTouchControl : MonoBehaviour
                     {
                         if (hit.collider.CompareTag("Trash"))
                         {
+                            GameManager.score++;
                             Debug.Log("Lixo Coletado!");
                             Destroy(hit.collider.gameObject);
                         }
