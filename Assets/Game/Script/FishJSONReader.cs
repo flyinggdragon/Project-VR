@@ -5,17 +5,11 @@ using UnityEditor;
 using System.IO;
 using System.Linq;
 
-public class FishJSONReader : MonoBehaviour {
+public static class FishJSONReader {
+    private static string jsonFilePath = "Assets/Game/Script/JSON/FishData.json"; 
 
-    private string jsonFilePath = "Assets/Game/Script/JSON/FishData.json"; 
-    [SerializeField] public List<FishData> fishList;
-
-    void Start() {
-        fishList = ReadFishDataFromJSON(jsonFilePath);
-    }
-
-    private List<FishData> ReadFishDataFromJSON(string path) {
-        string jsonText = File.ReadAllText(path);
+    public static List<FishData> ReadFishDataFromJSON() {
+        string jsonText = File.ReadAllText(jsonFilePath);
         FishListWrapper wrapper = JsonUtility.FromJson<FishListWrapper>(jsonText);
         
         return wrapper.fish;

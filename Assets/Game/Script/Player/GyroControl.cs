@@ -51,6 +51,9 @@ public class GyroTouchControl : MonoBehaviour
 
         HandleTouchInput();
 
+        if (Input.GetKeyDown(KeyCode.I)) {
+            GameManager.fishInterface.Toggle();
+        }
     }
 
     private void HandleTouchInput()
