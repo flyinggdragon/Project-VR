@@ -5,7 +5,7 @@ using UnityEditor;
 
 [System.Serializable]
 public class FishData {
-    public string imageName;
+    public string spriteName;
     public string fishName;
     public string popularName;
     public string scientificName;
