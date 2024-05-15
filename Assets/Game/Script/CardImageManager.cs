@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Loader : MonoBehaviour {
+// Recriar arquivo dentro da Unity
+public class CardImageManager : MonoBehaviour {
 
     public static List<Texture2D> LoadImages() {
 
