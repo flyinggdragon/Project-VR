@@ -55,19 +55,6 @@ public class GyroTouchControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I)) {
             GameManager.fishInterface.Toggle();
         }
-            
-        if (GameManager.fishInterface.isOpen) {
-
-            // Pega a direção do input (esquerda ou direita)
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            FishInterface fishInterface = GameManager.fishInterface;
-
-            // Scrolla para a direita ou esquerda
-            // -1 = esquerda ; 1 = direita
-            if (horizontal == -1 || horizontal == 1) {
-                fishInterface.Scroll((int) horizontal);
-            }
-        }
     }
 
     private void HandleTouchInput()
