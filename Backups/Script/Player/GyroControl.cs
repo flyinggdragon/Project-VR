@@ -53,7 +53,7 @@ public class GyroTouchControl : MonoBehaviour
 
         // Ativa a Interface de Cartas
         if (Input.GetKeyDown(KeyCode.I)) {
-            GameManager.ToggleCollection();
+            GameManager.fishInterface.Toggle();
         }
     }
 

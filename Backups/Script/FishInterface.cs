@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 // Ao abrir a tela, o jogo atrás deve pausar. Isso deve ser possivel usando alguma função assíncrona ou co-rotina.
 public class FishInterface : MonoBehaviour {
+    private GameObject score;
     private List<FishData> fishList;
     private List<Texture2D> sprites;
     private List<Card> cards;
     private bool isOpen = false;
 
     void Start() {
-        GameManager.scoreObject = GameObject.Find("Score");
-
         GameManager.fishInterface = GetComponent<FishInterface>();
+        score = GameObject.Find("Score");
+        
+        Preview.Initialize(gameObject.transform.GetChild(0).gameObject);
 
         fishList = FishJSONReader.ReadFishDataFromJSON();
 
@@ -47,7 +49,7 @@ public class FishInterface : MonoBehaviour {
         }
         
         // Objeto responsável pelo scroll
-        GameObject scrollBack = gameObject.transform.GetChild(1).gameObject;
+        GameObject scrollBack = gameObject.transform.GetChild(2).gameObject;
 
         // Container das cartas, onde todas elas estão dispostas
         GameObject container = scrollBack.transform.GetChild(0).gameObject;
@@ -66,6 +68,6 @@ public class FishInterface : MonoBehaviour {
         isOpen = !isOpen;
 
         gameObject.SetActive(isOpen);
-        GameManager.scoreObject.SetActive(!isOpen);
+        score.SetActive(!isOpen);
     }
 }
