@@ -6,6 +6,8 @@ public static class GameManager {
     public static FishInterface fishInterface;
     public static Preview preview;
     public static GameObject scoreObject;
+    public static List<LocationProximity.Location> locations;
+    public static LocationProximity.Location currentLocation;
     public static int score = 0;
 
     public static void ToggleCollection() {

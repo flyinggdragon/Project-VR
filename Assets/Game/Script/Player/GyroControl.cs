@@ -23,6 +23,9 @@ public class GyroTouchControl : MonoBehaviour
         transform.SetParent(cameraContainer.transform);
 
         gyroEnabled = EnableGyro();
+
+        GameManager.locations = LocationJSONReader.ReadLocationDataFromJSON();
+        GameManager.currentLocation = GameManager.locations[0];
     }
 
     private bool EnableGyro()
