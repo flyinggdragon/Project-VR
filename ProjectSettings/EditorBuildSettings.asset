@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GPSLocation.unity
+    path: Assets/Scenes/RiverScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/LakeScene.unity
+    guid: 22b8857763fc4094da5ecd0bbcdb0f49
+  - enabled: 1
+    path: Assets/Scenes/BeachScene.unity
+    guid: 651fa1814d17f03468bd153aa3a24deb
   m_configObjects: {}

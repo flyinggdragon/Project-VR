@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Android;
 using TMPro;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     private List<LocationProximity.Location> locations;
     private bool locationServiceEnabled = false;
     private bool isRunningOnPC = false;
+    private string currentLoadedScene = ""; // Variável para armazenar a cena atualmente carregada
 
     void Start()
     {
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
         if (!Input.location.isEnabledByUser)
         {
             Debug.Log("Serviço de localização não está habilitado pelo usuário.");
+            UseFixedCoordinates();
             yield break;
         }
 
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
         if (maxWait <= 0)
         {
             Debug.Log("Tempo de inicialização do serviço de localização excedido.");
+            UseFixedCoordinates();
             yield break;
         }
 
@@ -75,6 +79,7 @@ public class GameManager : MonoBehaviour
         if (Input.location.status == LocationServiceStatus.Failed)
         {
             Debug.Log("Não foi possível determinar a localização do dispositivo.");
+            UseFixedCoordinates();
             yield break;
         }
         else
@@ -156,7 +161,52 @@ public class GameManager : MonoBehaviour
         if (currentLocation != null)
         {
             locationText.text = "Região: " + currentLocation.locationName;
+
+            // Verifica o nome da localização para carregar a cena correspondente
+            string locationName = currentLocation.locationName.ToLower();
+            string targetScene = "";
+
+            if (locationName.Contains("rio"))
+            {
+                // Cena do Rio
+                targetScene = "RiverScene";
+            }
+            else if (locationName.Contains("laguna") || locationName.Contains("lago"))
+            {
+                // Cena do Lago
+                targetScene = "LakeScene";
+            }
+            else if (locationName.Contains("praia") || locationName.Contains("beach"))
+            {
+                // Cena da Praia
+                targetScene = "BeachScene";
+            }
+
+            // Carregar a cena apenas se não estiver carregada
+            if (!string.IsNullOrEmpty(targetScene) && SceneManager.GetActiveScene().name != targetScene)
+            {
+                SceneManager.LoadScene(targetScene);
+                currentLoadedScene = targetScene;
+            }
         }
+    }
+
+    private void UseFixedCoordinates()
+    {
+        // Coordenadas fixas para simulação quando o serviço de localização não está habilitado
+        // Escolha as coordenadas fixas apropriadas para o seu caso
+        currentLocation = new LocationProximity.Location
+        {
+            locationName = "Coordenadas Fixas",
+            type = "Fixas",
+            region = "Fixas",
+            fish = "Fixas",
+            coordinates = new LocationProximity.Coordinates
+            {
+                latitude = -29.7871f,
+                longitude = -50.0800f
+            }
+        };
     }
 }
 
