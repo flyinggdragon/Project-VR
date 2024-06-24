@@ -28,7 +28,6 @@ public class LocationManager : MonoBehaviour
         if (isRunningOnPC)
         {
             // Rodando no editor, utilizar coordenadas fixas
-            Debug.Log("Rodando no editor Unity (PC), utilizando coordenadas fixas.");
             currentLocation = GetClosestLocationFixed();
             UpdateUI();
         }

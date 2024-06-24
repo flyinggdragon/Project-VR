@@ -14,7 +14,6 @@ public class ScoreManager : MonoBehaviour
 
     void Awake()
     {
-        // Garantir que haja apenas uma instância do ScoreManager
         if (instance == null)
         {
             instance = this;
@@ -40,18 +39,22 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }
 
-    public void DecreaseTrashCount()
-    {
-        currentTrashCount--;
-        UpdateCleanlinessUI();
-    }
-
     private void UpdateScoreUI()
     {
         if (scoreText != null)
         {
             scoreText.text = score.ToString(); // Atualiza o texto apenas com o número da pontuação
         }
+        else
+        {
+            Debug.LogWarning("ScoreText is not assigned in ScoreManager.");
+        }
+    }
+
+    public void DecreaseTrashCount()
+    {
+        currentTrashCount--;
+        UpdateCleanlinessUI();
     }
 
     private void UpdateCleanlinessUI()
@@ -62,5 +65,8 @@ public class ScoreManager : MonoBehaviour
             cleanlinessText.text = "Nível de Limpeza: " + cleanlinessLevel.ToString("F1") + "%";
         }
     }
-}
 
+
+
+
+}

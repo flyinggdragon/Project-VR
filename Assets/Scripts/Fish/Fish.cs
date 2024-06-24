@@ -4,120 +4,100 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
-    public float moveSpeed = 0.5f; // Velocidade de movimento reduzida para suavidade
-    public float changeDirectionInterval = 5f; // Intervalo maior para mudar de direção
-    public float maxDistanceFromCenter = 20f; // Área maior para se mover
-    public float smoothRotationSpeed = 0.3f; // Velocidade de rotação mais suave
-    public float swimHeight = 0.5f; // Amplitude da oscilação vertical
-    public float verticalSpeed = 0.5f; // Velocidade do movimento vertical
-    public float rotationChangeProbability = 0.1f; // Probabilidade de mudar de rotação
+    // Parâmetros de movimento e rotação
+    public float moveSpeed = 0.5f;
+    public float changeDirectionInterval = 5f;
+    public float maxDistanceFromCenter = 20f;
+    public float smoothRotationSpeed = 0.3f;
+    public float swimHeight = 0.5f;
+    public float verticalSpeed = 0.5f;
+    public float rotationChangeProbability = 0.1f;
 
     // Propriedades do peixe
     public string spriteName;
-    public string fishName;
-    public string popularName;
-    public string scientificName;
     public float rarity;
-    public string description;
+    private float speed;
 
     private Vector3 targetPosition;
     private float timer;
     private Quaternion targetRotation;
     private float initialYPosition;
-    private bool hasBeenClicked = false; // Verifica se o peixe já foi clicado
+    private bool hasBeenClicked = false;
 
     void Start()
     {
-        // Define a posição inicial dentro de uma esfera centrada na posição inicial do Fish
         SetNewTargetPosition();
-
-        // Inicializa o timer
         timer = changeDirectionInterval;
-
-        // Inicializa a rotação inicial
         targetRotation = transform.rotation;
-
-        // Salva a posição inicial no eixo Y
         initialYPosition = transform.position.y;
+        speed = 5f; // Defina uma velocidade padrão inicial
     }
 
     void Update()
     {
-        // Movimento suave em direção ao ponto alvo
+        // Movimento suave em direção ao alvo
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
-
-        // Rotação suave em direção ao movimento
+        // Rotação suave em direção ao alvo
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothRotationSpeed);
 
-        // Ajusta a altura do movimento
+        // Movimento vertical (opcional)
         float yOffset = Mathf.Sin(Time.time * verticalSpeed) * swimHeight;
         transform.position = new Vector3(transform.position.x, initialYPosition + yOffset, transform.position.z);
 
-        // Atualiza o timer
+        // Atualiza o temporizador e muda de direção quando necessário
         timer -= Time.deltaTime;
-
-        // Se o timer atingir zero, verifica se deve mudar de direção
         if (timer <= 0f)
         {
-            // Define uma nova posição alvo e, com base na probabilidade, talvez mude a rotação
             SetNewTargetPosition();
-
-            // Determina aleatoriamente se deve mudar de rotação com base na probabilidade
             if (Random.value < rotationChangeProbability)
             {
-                // Gera uma nova rotação em direção ao ponto alvo
                 targetRotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
             }
-
-            // Reseta o timer
             timer = changeDirectionInterval;
         }
     }
 
     void SetNewTargetPosition()
     {
-        // Gera uma nova posição alvo dentro de uma esfera centrada na posição inicial do Fish
+        // Define uma nova posição aleatória dentro do raio máximo
         targetPosition = Random.insideUnitSphere * maxDistanceFromCenter + transform.position;
-        targetPosition.y = initialYPosition; // Mantém a mesma altura inicial
+        targetPosition.y = initialYPosition; // Mantém a posição vertical constante
     }
 
     void OnMouseDown()
     {
-        // Verifica se o peixe já foi clicado antes
         if (!hasBeenClicked)
         {
-            hasBeenClicked = true; // Marca que o peixe foi clicado
-
-            // Calcula os pontos baseado na raridade do peixe
+            hasBeenClicked = true;
             int points = CalculatePointsFromRarity(rarity);
             ScoreManager.instance.AddScore(points);
-            Debug.LogFormat("Fish {0} caught! Score increased by {1} points.", fishName, points);
-
-            // Aqui você pode adicionar quaisquer outras ações que deseja executar ao clicar no peixe pela primeira vez
-
-            // Não destruímos o peixe para permitir interações futuras sem alterar a pontuação
-        }
-        else
-        {
-            Debug.Log("Fish has already been caught!");
         }
     }
 
     int CalculatePointsFromRarity(float rarityValue)
     {
-        // Define uma escala para calcular os pontos com base na raridade
-        // Por exemplo, pode-se multiplicar por um número maior para dar mais pontos para peixes mais raros
-        float scale = 10f;
-        int basePoints = 5; // Pontos base para peixes comum
+        // Ajuste a escala de pontos conforme necessário
+        float scale = 20f; // Aumente este valor para dar mais pontos aos peixes mais raros
+        int basePoints = 5; // Pontos base para peixes comuns
 
-        // Calcula os pontos baseados na raridade (quanto mais raro, mais pontos)
-        int points = Mathf.RoundToInt(basePoints + rarityValue * scale);
+        // Calcula os pontos com base na raridade (quanto mais raro, mais pontos)
+        int points = Mathf.RoundToInt(basePoints + (1 - rarityValue) * scale); // Inverte a raridade
 
         return points;
     }
+
+    public void Initialize(FishData fishData)
+    {
+        spriteName = fishData.spriteName;
+        rarity = fishData.rarity;
+
+        // Configura a velocidade com base na raridade (exemplo)
+        float baseSpeed = 5f; // Velocidade base comum para todos os peixes
+        float rarityMultiplier = 1f - rarity; // Quanto menor a raridade, maior a variação
+
+        speed = baseSpeed * (1f + Random.Range(-0.2f, 0.2f) * rarityMultiplier);
+    }
 }
-
-
 
 
 

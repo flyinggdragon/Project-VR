@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static int score = 0;
     public static GameObject scoreObject;
-    //public static FishInterface fishInterface;
 
     private void Awake()
     {
@@ -22,11 +20,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //public static void ToggleCollection()
-    //{
-        //if (fishInterface != null)
-        //{
-            //fishInterface.Toggle();
-        //}
-    //}
+    public void LoadVictoryScene()
+    {
+        SceneManager.LoadScene("VictoryScene"); // Substitua "VictoryScene" pelo nome da sua cena de vitória
+    }
 }

@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private Camera mainCamera;
-    private Quaternion rot;
-    private Gyroscope gyro;
-    private bool gyroEnabled;
+
+    private float rotationSpeed = 5f; // Velocidade de rotação da câmera
 
     private float minVerticalAngle = -80f; // Ângulo mínimo para a rotação vertical
     private float maxVerticalAngle = 80f;  // Ângulo máximo para a rotação vertical
@@ -21,47 +18,10 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("Main Camera not found.");
             return;
         }
-
-        gyroEnabled = EnableGyro();
-
-        if (!gyroEnabled)
-        {
-            Debug.LogWarning("Gyroscope not enabled or not supported on this device.");
-        }
-        else
-        {
-            Debug.Log("Gyroscope enabled successfully.");
-        }
-
-        rot = new Quaternion(0, 0, 1, 0);
-
-        Debug.Log("PlayerMovement script started.");
-    }
-
-    private bool EnableGyro()
-    {
-        if (!SystemInfo.supportsGyroscope)
-        {
-            Debug.Log("Gyroscope not supported on this device.");
-            return false;
-        }
-
-        gyro = Input.gyro;
-        gyro.enabled = true;
-
-        Debug.Log("Gyroscope enabled.");
-
-        return true;
     }
 
     void Update()
     {
-        if (gyroEnabled)
-        {
-            mainCamera.transform.localRotation = gyro.attitude * rot;
-            ClampVerticalRotation();
-        }
-
         HandleTouchInput();
         HandleMouseInput();
     }
@@ -91,13 +51,6 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                     break;
-
-                case TouchPhase.Moved:
-                    Vector2 touchDelta = touch.deltaPosition;
-                    mainCamera.transform.Rotate(Vector3.up, -touchDelta.x * 0.1f, Space.World);
-                    mainCamera.transform.Rotate(Vector3.right, touchDelta.y * 0.1f, Space.World);
-                    ClampVerticalRotation();
-                    break;
             }
         }
     }
@@ -106,11 +59,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
+            float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
+            float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
-            mainCamera.transform.Rotate(Vector3.up, mouseX * 5f, Space.World);
-            mainCamera.transform.Rotate(Vector3.right, -mouseY * 5f, Space.World);
+            // Rotacionar em torno do eixo vertical (Y) com o movimento do mouse horizontal
+            transform.Rotate(Vector3.up, mouseX, Space.World);
+
+            // Rotacionar em torno do eixo horizontal (X) invertido com o movimento do mouse vertical
+            mainCamera.transform.Rotate(Vector3.right, -mouseY, Space.World);
+
             ClampVerticalRotation();
         }
     }

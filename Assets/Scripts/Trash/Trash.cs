@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
-    public int points = 10; // Pontos adicionados ao destruir este objeto
+    public int points = 100; // Pontos adicionados ao destruir este objeto
 
     void Start()
     {
@@ -39,14 +39,15 @@ public class Trash : MonoBehaviour
         DestroyTrash();
     }
 
+
     private void DestroyTrash()
     {
-        // Adicionar pontos ao score
         ScoreManager.instance.AddScore(points);
-        // Diminuir o contador de lixo e atualizar o nível de limpeza
         ScoreManager.instance.DecreaseTrashCount();
         Destroy(gameObject);
-        Debug.Log("Trash caught!");
     }
+
+
 }
+
 

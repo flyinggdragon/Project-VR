@@ -14,7 +14,7 @@
             "fishName": "Mussum",
             "popularName": "Cobra d'água, enguia-do-pântano",
             "scientificName": "Synbranchus marmoratus",
-            "rarity": 0.2,
+            "rarity": 0.02,
             "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
         },
         {
@@ -46,7 +46,7 @@
             "fishName": "Lambari",
             "popularName": "Piaba",
             "scientificName": "Astyanax bimaculatus",
-            "rarity": 0.06,
+            "rarity": 0.006,
             "description": "Um pequeno peixe com escamas. É omnívoro e detritívoro, alimentando-se de frutos, sementes e insetos terrestres, vegetais aquáticos, outros peixes e até detritos e sedimentos. Possui coloração prateada, e nadadeiras variando entre amarelo, vermelho e preto. Seu corpo é alongado e um pouco comprimido. Pode ser encontrado por todas as bacias hidrográficas do Brasil."
         },
         {
@@ -62,7 +62,7 @@
             "fishName": "Bagre",
             "popularName": "Bagre",
             "scientificName": "Bagre spp",
-            "rarity": 0.05,
+            "rarity": 0.005,
             "description": "Este peixe predador pode ser encontrado tanto em águas salgadas e salobras da costa leste brasileira como nas águas interiores. O nome bagre é genérico, já que existem muitas espécies de bagre diferentes."
         },
         {
@@ -80,22 +80,6 @@
             "scientificName": "Hoplias malabaricus",
             "rarity": 0.25,
             "description": "Um peixe de escamas. É um animal carnívoro que se alimenta de pequenos peixes, rãs e insetos. Habita águas paradas de lagos, represas, brejos, remansos e rios. Possui corpo cilíndrico, boca grande, olhos grandes e nadadeiras arredondadas, exceto a dorsal. Sua coloração é marrom ou preta manchada de cinza. Possui dentes poderosos e afiados. A espécie está distribuída por todo o território brasileiro."
-        },
-        {
-            "spriteName": "tilapia",
-            "fishName": "Tilápia",
-            "popularName": "Tilápia",
-            "scientificName": "Tilapia rendalli",
-            "rarity": 1.0,
-            "description": "Um peixe de escamas, com corpo um pouco alto e comprimido .Está distribuído em todas as bacias hidrográficas do Brasil, habitando na água doce. É um animal omnívoro, herbívoro ou fitoplanctófago, alimenta-se de insetos, microcrustáceos, sementes, frutos, raízes, algas, plâncton e pequenos peixes. Pode atingir 45 cm de comprimento."
-        },
-        {
-            "spriteName": "jundia",
-            "fishName": "Jundiá",
-            "popularName": "Nhurundia, Mandi-Guaru, Bagre-Sapo",
-            "scientificName": "Rhamdia quelen",
-            "rarity": 0.6,
-            "description": "Um grande peixe de couro. Possui coloração acinzentada-escura e ventre branco. É um peixe omnívoro e especulador do substrato. Alimenta-se de insetos terrestres e aquáticos como crustáceos e restos vegetais, além de peixes como os lambaris e guarus. Habita rios com fundo arenoso e remansos de rios, próximos à boca do canal. Está distribuído por toda a América do Sul."
         }
     ]
 }
