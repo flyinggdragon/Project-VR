@@ -12,6 +12,14 @@ public class Fish : MonoBehaviour
     public float verticalSpeed = 0.5f; // Velocidade do movimento vertical
     public float rotationChangeProbability = 0.1f; // Probabilidade de mudar de rotação
 
+    // Propriedades do peixe
+    public string spriteName;
+    public string fishName;
+    public string popularName;
+    public string scientificName;
+    public float rarity;
+    public string description;
+
     private Vector3 targetPosition;
     private float timer;
     private Quaternion targetRotation;
@@ -80,9 +88,10 @@ public class Fish : MonoBehaviour
         {
             hasBeenClicked = true; // Marca que o peixe foi clicado
 
-            // Aumenta a pontuação
-            ScoreManager.instance.AddScore(5);
-            Debug.Log("Fish caught! Score increased.");
+            // Calcula os pontos baseado na raridade do peixe
+            int points = CalculatePointsFromRarity(rarity);
+            ScoreManager.instance.AddScore(points);
+            Debug.LogFormat("Fish {0} caught! Score increased by {1} points.", fishName, points);
 
             // Aqui você pode adicionar quaisquer outras ações que deseja executar ao clicar no peixe pela primeira vez
 
@@ -92,6 +101,19 @@ public class Fish : MonoBehaviour
         {
             Debug.Log("Fish has already been caught!");
         }
+    }
+
+    int CalculatePointsFromRarity(float rarityValue)
+    {
+        // Define uma escala para calcular os pontos com base na raridade
+        // Por exemplo, pode-se multiplicar por um número maior para dar mais pontos para peixes mais raros
+        float scale = 10f;
+        int basePoints = 5; // Pontos base para peixes comum
+
+        // Calcula os pontos baseados na raridade (quanto mais raro, mais pontos)
+        int points = Mathf.RoundToInt(basePoints + rarityValue * scale);
+
+        return points;
     }
 }
 

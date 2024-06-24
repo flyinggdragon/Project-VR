@@ -13,8 +13,6 @@ public class GyroTouchControl : MonoBehaviour
     private Vector2 touchStartPos;
     private Vector2 touchDelta;
 
-    public GameObject lixo; // Referência ao objeto "Lixo"
-
     private void Start()
     {
         cameraContainer = new GameObject("Camera Container");
@@ -61,10 +59,10 @@ public class GyroTouchControl : MonoBehaviour
         HandleTouchInput();
 
         // Ativa a Interface de Cartas
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            GameManager.ToggleCollection();
-        }
+        //if (Input.GetKeyDown(KeyCode.I))
+        //{
+            //GameManager.ToggleCollection();
+        //}
     }
 
     private void HandleTouchInput()
@@ -84,7 +82,6 @@ public class GyroTouchControl : MonoBehaviour
                         if (hit.collider.CompareTag("Trash"))
                         {
                             GameManager.score++;
-                            Debug.Log("Lixo Coletado!");
                             Destroy(hit.collider.gameObject);
                         }
                     }

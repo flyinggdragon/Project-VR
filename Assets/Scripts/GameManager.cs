@@ -2,30 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameManager {
-    public static FishInterface fishInterface;
-    public static Preview preview;
-    public static GameObject scoreObject;
-    //public static List<LocationProximity.Location> locations;
-    //public static LocationProximity.Location currentLocation;
+public class GameManager : MonoBehaviour
+{
+    public static GameManager instance;
     public static int score = 0;
+    public static GameObject scoreObject;
+    //public static FishInterface fishInterface;
 
-    public static void ToggleCollection() {
-        fishInterface.Toggle();
-    }
-
-    public static void OpenPreview(Card card)
+    private void Awake()
     {
-        ToggleCollection();
-        preview.Toggle();
-
-        preview.AssignInfo(card.data);
-        preview.previewCard.DrawCard(card.textureFront, card.textureBack);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public static void ClosePreview()
-    {
-        ToggleCollection();
-        preview.Toggle();
-    }
+    //public static void ToggleCollection()
+    //{
+        //if (fishInterface != null)
+        //{
+            //fishInterface.Toggle();
+        //}
+    //}
 }

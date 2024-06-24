@@ -1,22 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 using System.IO;
-using System.Linq;
 
-public static class FishJSONReader {
-    private static string jsonFilePath = "Assets/Game/Script/JSON/FishData.json"; 
+namespace MyGame.Fish // Defina o mesmo namespace para FishData
+{
+    public static class FishJSONReader
+    {
+        public static List<FishData> ReadFishDataFromJSON()
+        {
+            string filePath = "FishData";
 
-    public static List<FishData> ReadFishDataFromJSON() {
-        string jsonText = File.ReadAllText(jsonFilePath);
-        FishListWrapper wrapper = JsonUtility.FromJson<FishListWrapper>(jsonText);
-        
-        return wrapper.fish;
+            TextAsset jsonFile = Resources.Load<TextAsset>(filePath);
+
+            if (jsonFile == null)
+            {
+                Debug.LogError($"Could not find file at {filePath}");
+                return null;
+            }
+
+            string json = jsonFile.text;
+
+            FishList fishList = JsonUtility.FromJson<FishList>(json);
+            return fishList != null ? fishList.fish : new List<FishData>();
+        }
     }
 
     [System.Serializable]
-    public class FishListWrapper {
+    public class FishList
+    {
         public List<FishData> fish;
     }
+
+    [System.Serializable]
+    public class FishData
+    {
+        public string spriteName;
+        public string fishName;
+        public string popularName;
+        public string scientificName;
+        public float rarity;
+        public string description;
+    }
 }
+
