@@ -1,0 +1,85 @@
+{
+    "fish": [
+
+        {
+            "spriteName": "mussum",
+            "fishName": "Mussum",
+            "popularName": "Cobra d'água, enguia-do-pântano",
+            "scientificName": "Synbranchus marmoratus",
+            "rarity": 0.45,
+            "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
+        },
+        {
+            "spriteName": "mussumRara",
+            "fishName": "Mussum",
+            "popularName": "Cobra d'água, enguia-do-pântano",
+            "scientificName": "Synbranchus marmoratus",
+            "rarity": 0.02,
+            "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
+        },
+        {
+            "spriteName": "acara",
+            "fishName": "Acará",
+            "popularName": "Acará",
+            "scientificName": "Synbranchus marmoratus",
+            "rarity": 0.5,
+            "description": "Um peixe com escamas e omnívoro. Alimenta-se de uma ampla variedade de alimentos. Normalmente habita locais com águas paradas, mas também podem ser encontrados nos rios, em seus remansos e margens verdejantes. Pode ser encontrado em todo o Brasil, especialmente nas bacias do rio Doce, do rio Paraíba do Sul e do rio São Francisco. Pode chegar aos 25 cm."
+        },
+        {
+            "spriteName": "acaraRara",
+            "fishName": "Acará",
+            "popularName": "Acará",
+            "scientificName": "Synbranchus marmoratus",
+            "rarity": 0.15,
+            "description": "Um peixe com escamas e omnívoro. Alimenta-se de uma ampla variedade de alimentos. Normalmente habita locais com águas paradas, mas também podem ser encontrados nos rios, em seus remansos e margens verdejantes. Pode ser encontrado em todo o Brasil, especialmente nas bacias do rio Doce, do rio Paraíba do Sul e do rio São Francisco. Pode chegar aos 25 cm."
+        },
+        {
+            "spriteName": "lambari",
+            "fishName": "Lambari",
+            "popularName": "Piaba",
+            "scientificName": "Astyanax bimaculatus",
+            "rarity": 0.9,
+            "description": "Um pequeno peixe com escamas. É omnívoro e detritívoro, alimentando-se de frutos, sementes e insetos terrestres, vegetais aquáticos, outros peixes e até detritos e sedimentos. Possui coloração prateada, e nadadeiras variando entre amarelo, vermelho e preto. Seu corpo é alongado e um pouco comprimido. Pode ser encontrado por todas as bacias hidrográficas do Brasil."
+        },
+        {
+            "spriteName": "lambariEpica",
+            "fishName": "Lambari",
+            "popularName": "Piaba",
+            "scientificName": "Astyanax bimaculatus",
+            "rarity": 0.006,
+            "description": "Um pequeno peixe com escamas. É omnívoro e detritívoro, alimentando-se de frutos, sementes e insetos terrestres, vegetais aquáticos, outros peixes e até detritos e sedimentos. Possui coloração prateada, e nadadeiras variando entre amarelo, vermelho e preto. Seu corpo é alongado e um pouco comprimido. Pode ser encontrado por todas as bacias hidrográficas do Brasil."
+        },
+        {
+            "spriteName": "bagre",
+            "fishName": "Bagre",
+            "popularName": "Bagre",
+            "scientificName": "Bagre spp",
+            "rarity": 0.7,
+            "description": "Este peixe predador pode ser encontrado tanto em águas salgadas e salobras da costa leste brasileira como nas águas interiores. O nome bagre é genérico, já que existem muitas espécies de bagre diferentes."
+        },
+        {
+            "spriteName": "bagreEpica",
+            "fishName": "Bagre",
+            "popularName": "Bagre",
+            "scientificName": "Bagre spp",
+            "rarity": 0.005,
+            "description": "Este peixe predador pode ser encontrado tanto em águas salgadas e salobras da costa leste brasileira como nas águas interiores. O nome bagre é genérico, já que existem muitas espécies de bagre diferentes."
+        },
+        {
+            "spriteName": "traira",
+            "fishName": "Traíra",
+            "popularName": "Lobó, Tararira",
+            "scientificName": "Hoplias malabaricus",
+            "rarity": 0.6,
+            "description": "Um peixe de escamas. É um animal carnívoro que se alimenta de pequenos peixes, rãs e insetos. Habita águas paradas de lagos, represas, brejos, remansos e rios. Possui corpo cilíndrico, boca grande, olhos grandes e nadadeiras arredondadas, exceto a dorsal. Sua coloração é marrom ou preta manchada de cinza. Possui dentes poderosos e afiados. A espécie está distribuída por todo o território brasileiro."
+        },
+        {
+            "spriteName": "trairaRara",
+            "fishName": "Traíra",
+            "popularName": "Lobó, Tararira",
+            "scientificName": "Hoplias malabaricus",
+            "rarity": 0.25,
+            "description": "Um peixe de escamas. É um animal carnívoro que se alimenta de pequenos peixes, rãs e insetos. Habita águas paradas de lagos, represas, brejos, remansos e rios. Possui corpo cilíndrico, boca grande, olhos grandes e nadadeiras arredondadas, exceto a dorsal. Sua coloração é marrom ou preta manchada de cinza. Possui dentes poderosos e afiados. A espécie está distribuída por todo o território brasileiro."
+        }
+    ]
+}

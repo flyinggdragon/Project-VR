@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fish
   - Trash
+  - Fish
   layers:
   - Default
   - TransparentFX
