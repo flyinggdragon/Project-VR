@@ -2,6 +2,9 @@
 public class FishData
 {
     public string spriteName;
+    public string fishName;
+    public string popularName;
+    public string scientificName;
     public float rarity;
-    // Adicione outros campos conforme necessário (como nome popular, nome científico, descrição, etc.)
+    public string description;
 }

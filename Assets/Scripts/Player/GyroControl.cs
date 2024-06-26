@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GyroTouchControl : MonoBehaviour
+public class GyroControl : MonoBehaviour
 {
     private bool gyroEnabled;
     private Gyroscope gyro;
@@ -81,7 +81,7 @@ public class GyroTouchControl : MonoBehaviour
                     {
                         if (hit.collider.CompareTag("Trash"))
                         {
-                            GameManager.score++;
+                            GameManager.instance.score++;
                             Destroy(hit.collider.gameObject);
                         }
                     }

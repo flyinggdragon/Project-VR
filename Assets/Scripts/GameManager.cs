@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static int score = 0;
-    public static GameObject scoreObject;
+    public int score = 0;
+    public GameObject scoreObject;
+    public Collection collection;
+    public List<FishData> fish;
 
     private void Awake()
     {
@@ -18,6 +21,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start() {
+        fish = new List<FishData>();
     }
 
     public void LoadVictoryScene()

@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleTouchInput();
         HandleMouseInput();
+
+        if (Input.GetKeyDown(KeyCode.I)) {
+            GameManager.instance.collection.Toggle();
+        }
     }
 
     private void HandleTouchInput()
@@ -46,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                         else if (hit.collider.CompareTag("Trash"))
                         {
                             Debug.Log("Trash touched!");
-                            GameManager.score++;
+                            GameManager.instance.score++;
                             Destroy(hit.collider.gameObject);
                         }
                     }

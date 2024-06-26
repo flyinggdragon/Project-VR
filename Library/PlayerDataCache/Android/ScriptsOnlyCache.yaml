@@ -1,9 +1,11 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Collection
     - Fish
     - FishSpawner
-    - GyroTouchControl
+    - GameManager
+    - GyroControl
     - LocationManager
     - LocationProximity
     - PlayerMovement
@@ -32,7 +34,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -50,7 +55,10 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
+    - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -62,8 +70,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: Collection
+    methodName: Toggle
   sceneClasses:
     Assets/Scenes/BeachScene.unity:
     - Class: 1
@@ -93,9 +105,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17720}
     - Class: 114
-      Script: {instanceID: 17922}
+      Script: {instanceID: 17924}
     - Class: 114
-      Script: {instanceID: 20132}
+      Script: {instanceID: 20134}
     - Class: 114
       Script: {instanceID: 20828}
     - Class: 114
@@ -144,9 +156,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17720}
     - Class: 114
-      Script: {instanceID: 17922}
+      Script: {instanceID: 17924}
     - Class: 114
-      Script: {instanceID: 20132}
+      Script: {instanceID: 20134}
     - Class: 114
       Script: {instanceID: 20828}
     - Class: 114
@@ -217,17 +229,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17720}
     - Class: 114
-      Script: {instanceID: 17922}
+      Script: {instanceID: 17924}
     - Class: 114
-      Script: {instanceID: 18050}
+      Script: {instanceID: 18052}
     - Class: 114
-      Script: {instanceID: 18188}
+      Script: {instanceID: 18190}
     - Class: 114
-      Script: {instanceID: 19162}
+      Script: {instanceID: 19164}
     - Class: 114
-      Script: {instanceID: 20132}
+      Script: {instanceID: 19182}
     - Class: 114
-      Script: {instanceID: 20282}
+      Script: {instanceID: 19824}
+    - Class: 114
+      Script: {instanceID: 20134}
+    - Class: 114
+      Script: {instanceID: 20284}
     - Class: 114
       Script: {instanceID: 20828}
     - Class: 114
@@ -236,6 +252,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 21184}
     - Class: 114
       Script: {instanceID: 21450}
+    - Class: 114
+      Script: {instanceID: 21604}
+    - Class: 114
+      Script: {instanceID: 22184}
+    - Class: 114
+      Script: {instanceID: 26318}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -304,13 +326,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 17720}
     - Class: 114
-      Script: {instanceID: 17922}
+      Script: {instanceID: 17924}
     - Class: 114
-      Script: {instanceID: 19194}
+      Script: {instanceID: 19196}
     - Class: 114
-      Script: {instanceID: 19444}
+      Script: {instanceID: 19446}
     - Class: 114
-      Script: {instanceID: 20132}
+      Script: {instanceID: 20134}
     - Class: 114
       Script: {instanceID: 20828}
     - Class: 114
@@ -570,10 +592,10 @@ ScriptsOnlyBuild:
     className: ControlInterface
   - hash:
       serializedVersion: 2
-      Hash: 7cf033c96ad09d937ad9a9ba29705fb3
+      Hash: 3bd1c070d931fceaa6bce7f32cdf4734
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: GyroTouchControl
+    className: GyroControl
   - hash:
       serializedVersion: 2
       Hash: a1ac4c50e55874de16eee3db71aa9784
@@ -924,12 +946,6 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 38a12b7097f7c9b2643be6d153ff0a80
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FishJSONReader
-  - hash:
-      serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -1050,7 +1066,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e47d77dff9f7fd0f54480d10a98b411f
+      Hash: 8491df3be3a78271af62e9d7b49e4508
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: GameManager
@@ -1228,10 +1244,28 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 38a12b7097f7c9b2643be6d153ff0a80
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FishJSONReader
+  - hash:
+      serializedVersion: 2
+      Hash: 2227aedd6dd0897a78b4a8408f3e6c9f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Collection
+  - hash:
+      serializedVersion: 2
+      Hash: 5eeeaba11b32184ef26567d5b94e4883
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CardImageManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/VictoryScene.unity
   - Assets/Scenes/LakeScene.unity
   - Assets/Scenes/BeachScene.unity
   - Assets/Scenes/RiverScene.unity
-  playerPath: D:/Projetos RV/Builds/Teste10.apk
+  playerPath: D:/Projetos RV/Builds/Teste11.apk
