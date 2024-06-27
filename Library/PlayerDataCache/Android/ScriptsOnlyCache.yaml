@@ -101,19 +101,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16676}
     - Class: 114
-      Script: {instanceID: 17456}
+      Script: {instanceID: 17458}
     - Class: 114
-      Script: {instanceID: 17720}
+      Script: {instanceID: 17722}
     - Class: 114
-      Script: {instanceID: 17924}
+      Script: {instanceID: 17926}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 20138}
     - Class: 114
-      Script: {instanceID: 20828}
+      Script: {instanceID: 20834}
     - Class: 114
-      Script: {instanceID: 21144}
+      Script: {instanceID: 21150}
     - Class: 114
-      Script: {instanceID: 21450}
+      Script: {instanceID: 21458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -152,19 +152,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16676}
     - Class: 114
-      Script: {instanceID: 17456}
+      Script: {instanceID: 17458}
     - Class: 114
-      Script: {instanceID: 17720}
+      Script: {instanceID: 17722}
     - Class: 114
-      Script: {instanceID: 17924}
+      Script: {instanceID: 17926}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 20138}
     - Class: 114
-      Script: {instanceID: 20828}
+      Script: {instanceID: 20834}
     - Class: 114
-      Script: {instanceID: 21144}
+      Script: {instanceID: 21150}
     - Class: 114
-      Script: {instanceID: 21450}
+      Script: {instanceID: 21458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -223,41 +223,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16718}
     - Class: 114
-      Script: {instanceID: 17262}
+      Script: {instanceID: 17264}
     - Class: 114
-      Script: {instanceID: 17456}
+      Script: {instanceID: 17458}
     - Class: 114
-      Script: {instanceID: 17720}
+      Script: {instanceID: 17722}
     - Class: 114
-      Script: {instanceID: 17924}
+      Script: {instanceID: 17926}
     - Class: 114
-      Script: {instanceID: 18052}
+      Script: {instanceID: 18054}
     - Class: 114
-      Script: {instanceID: 18190}
+      Script: {instanceID: 18192}
     - Class: 114
-      Script: {instanceID: 19164}
+      Script: {instanceID: 19166}
     - Class: 114
-      Script: {instanceID: 19182}
+      Script: {instanceID: 19184}
     - Class: 114
-      Script: {instanceID: 19824}
+      Script: {instanceID: 19828}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 20138}
     - Class: 114
-      Script: {instanceID: 20284}
+      Script: {instanceID: 20288}
     - Class: 114
-      Script: {instanceID: 20828}
+      Script: {instanceID: 20834}
     - Class: 114
-      Script: {instanceID: 21144}
+      Script: {instanceID: 21150}
     - Class: 114
-      Script: {instanceID: 21184}
+      Script: {instanceID: 21190}
     - Class: 114
-      Script: {instanceID: 21450}
+      Script: {instanceID: 21394}
     - Class: 114
-      Script: {instanceID: 21604}
+      Script: {instanceID: 21458}
     - Class: 114
-      Script: {instanceID: 22184}
+      Script: {instanceID: 21612}
     - Class: 114
-      Script: {instanceID: 26318}
+      Script: {instanceID: 22192}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -320,25 +320,25 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 16718}
     - Class: 114
-      Script: {instanceID: 17298}
+      Script: {instanceID: 17300}
     - Class: 114
-      Script: {instanceID: 17456}
+      Script: {instanceID: 17458}
     - Class: 114
-      Script: {instanceID: 17720}
+      Script: {instanceID: 17722}
     - Class: 114
-      Script: {instanceID: 17924}
+      Script: {instanceID: 17926}
     - Class: 114
-      Script: {instanceID: 19196}
+      Script: {instanceID: 19198}
     - Class: 114
-      Script: {instanceID: 19446}
+      Script: {instanceID: 19450}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 20138}
     - Class: 114
-      Script: {instanceID: 20828}
+      Script: {instanceID: 20834}
     - Class: 114
-      Script: {instanceID: 21144}
+      Script: {instanceID: 21150}
     - Class: 114
-      Script: {instanceID: 21450}
+      Script: {instanceID: 21458}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -380,6 +380,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 5eeeaba11b32184ef26567d5b94e4883
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CardImageManager
   - hash:
       serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
@@ -946,6 +952,12 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
+      Hash: 38a12b7097f7c9b2643be6d153ff0a80
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FishJSONReader
+  - hash:
+      serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
@@ -1028,6 +1040,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TextContainer
+  - hash:
+      serializedVersion: 2
+      Hash: 2227aedd6dd0897a78b4a8408f3e6c9f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Collection
   - hash:
       serializedVersion: 2
       Hash: e6a443d45b8a3fae52d062037a81ec9b
@@ -1244,28 +1262,10 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 38a12b7097f7c9b2643be6d153ff0a80
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: FishJSONReader
-  - hash:
-      serializedVersion: 2
-      Hash: 2227aedd6dd0897a78b4a8408f3e6c9f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Collection
-  - hash:
-      serializedVersion: 2
-      Hash: 5eeeaba11b32184ef26567d5b94e4883
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: CardImageManager
   platform: 13
   scenePathNames:
   - Assets/Scenes/VictoryScene.unity
   - Assets/Scenes/LakeScene.unity
   - Assets/Scenes/BeachScene.unity
   - Assets/Scenes/RiverScene.unity
-  playerPath: D:/Projetos RV/Builds/Teste11.apk
+  playerPath: D:/Projetos RV/Builds/Teste12.apk

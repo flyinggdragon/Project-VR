@@ -71,6 +71,10 @@ public class Fish : MonoBehaviour
             hasBeenClicked = true;
             int points = CalculatePointsFromRarity(rarity);
             ScoreManager.instance.AddScore(points);
+
+            Collection c = GameManager.instance.collection;
+            Card fishCard = c.GetCardByName(gameObject.name.Replace("(Clone)", ""));
+            fishCard.collected = true;
         }
     }
 

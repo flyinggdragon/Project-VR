@@ -45,11 +45,12 @@ public class PlayerMovement : MonoBehaviour
                     {
                         if (hit.collider.CompareTag("Fish"))
                         {
-                            Debug.Log("Fish touched!");
+                            Collection c = GameManager.instance.collection;
+                            Card fishCard = c.GetCardByName(hit.collider.name.Replace("(Clone)", ""));
+                            fishCard.collected = true;
                         }
                         else if (hit.collider.CompareTag("Trash"))
                         {
-                            Debug.Log("Trash touched!");
                             GameManager.instance.score++;
                             Destroy(hit.collider.gameObject);
                         }

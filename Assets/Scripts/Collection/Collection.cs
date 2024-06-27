@@ -47,7 +47,8 @@ public class Collection : MonoBehaviour {
             Texture2D tex = CardImageManager.GetCardSpriteFromList(fish.spriteName, sprites);
 
             if (tex) {
-                cards.Add(new Card(tex, fish));
+                fish.card = new Card(tex, fish);
+                cards.Add(fish.card);
             }
         }
         
@@ -64,6 +65,16 @@ public class Collection : MonoBehaviour {
 
             i++;
         }
+    }
+
+    public Card GetCardByName(string name) {
+        foreach (FishData fish in fishList) {
+            if (fish.spriteName.ToUpper() == name.ToUpper()) {
+                return fish.card;
+            }
+        }
+    
+        return null;
     }
 
     public void Toggle() {

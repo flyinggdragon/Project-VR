@@ -1,4 +1,4 @@
-#Tue Jun 25 23:26:21 BRT 2024
+#Wed Jun 26 23:57:18 BRT 2024
 base.0=D\:\\Projetos RV\\Project-VR\\Library\\Bee\\Android\\Prj\\Mono2x\\Gradle\\launcher\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

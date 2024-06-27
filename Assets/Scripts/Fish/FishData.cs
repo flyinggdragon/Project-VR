@@ -7,4 +7,5 @@ public class FishData
     public string scientificName;
     public float rarity;
     public string description;
+    public Card card;
 }
