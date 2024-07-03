@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class LocationJSONReader
+public class LocationJSONReader : MonoBehaviour
 {
     public static List<LocationProximity.Location> ReadLocationDataFromJSON()
     {
-        TextAsset jsonTextAsset = Resources.Load<TextAsset>("LocationData");
+        TextAsset jsonTextAsset = Resources.Load<TextAsset>("JSON/LocationData");
         if (jsonTextAsset == null)
         {
             Debug.LogError("Não foi possível carregar o arquivo JSON.");

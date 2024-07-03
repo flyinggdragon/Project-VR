@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 260555136}
+  m_IndirectSpecularColor: {r: 0.118899934, g: 0.31090936, b: 0.3529911, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2485,6 +2486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 559740409}
   cleanlinessText: {fileID: 219538761}
+  cleanlinessLevel: 0
 --- !u!4 &328435052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4479463146110422492, guid: dc51344fa14fcc745ad24e5ab8c12b2a, type: 3}
@@ -14828,7 +14830,6 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
-  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1

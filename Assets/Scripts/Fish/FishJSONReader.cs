@@ -12,7 +12,7 @@ public class FishJSONReader : MonoBehaviour
     public static List<FishData> ReadFishDataFromJSON()
     {
         // Carrega o JSON como texto da pasta Resources
-        TextAsset jsonTextAsset = Resources.Load<TextAsset>("fishData");
+        TextAsset jsonTextAsset = Resources.Load<TextAsset>("JSON/fishData");
 
         if (jsonTextAsset == null)
         {
