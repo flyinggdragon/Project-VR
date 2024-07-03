@@ -31,7 +31,7 @@ public class Fish : MonoBehaviour
     void Update()
     {
         // Movimento contínuo em direção ao alvo
-        transform.position += transform.forward * Time.deltaTime * speed;
+        transform.position += -transform.forward * Time.deltaTime * speed;
 
         // Rotação suave em direção ao alvo
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothRotationSpeed);
@@ -62,25 +62,23 @@ public class Fish : MonoBehaviour
         if (!hasBeenClicked)
         {
             hasBeenClicked = true;
-            int points = CalculatePointsFromRarity(rarity);
-            ScoreManager.instance.AddScore(points);
 
             Collection c = GameManager.instance.collection;
             Card fishCard = c.GetCardByName(gameObject.name.Replace("(Clone)", ""));
             fishCard.collected = true;
+            
+            int points;
+
+            if (rarity > 0.3) {
+                points = 150;
+            } else if (rarity < 0.1) {
+                points = 600;
+            } else {
+                points = 300;
+            }
+
+            ScoreManager.instance.AddScore(points);
         }
-    }
-
-    int CalculatePointsFromRarity(float rarityValue)
-    {
-        // Ajuste a escala de pontos conforme necessário
-        float scale = 20f; // Aumente este valor para dar mais pontos aos peixes mais raros
-        int basePoints = 5; // Pontos base para peixes comuns
-
-        // Calcula os pontos com base na raridade (quanto mais raro, mais pontos)
-        int points = Mathf.RoundToInt(basePoints + (1 - rarityValue) * scale); // Inverte a raridade
-
-        return points;
     }
 
     public void Initialize(FishData fishData)

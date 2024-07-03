@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     private int score = 0;
     private int totalTrashCount; // Total de objetos de lixo no início do jogo
     private int currentTrashCount; // Contador de objetos de lixo restantes
+    [SerializeField] public float cleanlinessLevel = 0.0f;
 
     void Awake()
     {
@@ -31,6 +33,13 @@ public class ScoreManager : MonoBehaviour
         currentTrashCount = totalTrashCount;
 
         UpdateCleanlinessUI();
+    }
+
+    void Update() {
+        if (cleanlinessLevel == 100.0f) {
+            Debug.Log("GANHOU");
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 
     public void AddScore(int points)
@@ -61,12 +70,8 @@ public class ScoreManager : MonoBehaviour
     {
         if (cleanlinessText != null)
         {
-            float cleanlinessLevel = 100f * (totalTrashCount - currentTrashCount) / totalTrashCount;
+            cleanlinessLevel = 100f * (totalTrashCount - currentTrashCount) / totalTrashCount;
             cleanlinessText.text = "Nível de Limpeza: " + cleanlinessLevel.ToString("F1") + "%";
         }
     }
-
-
-
-
 }
