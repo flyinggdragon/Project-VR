@@ -6,12 +6,10 @@ public class Fish : MonoBehaviour
 {
     // Parâmetros de movimento e rotação
     public float moveSpeed = 0.5f;
-    public float changeDirectionInterval = 5f;
     public float maxDistanceFromCenter = 20f;
     public float smoothRotationSpeed = 0.3f;
     public float swimHeight = 0.5f;
     public float verticalSpeed = 0.5f;
-    public float rotationChangeProbability = 0.1f;
 
     // Propriedades do peixe
     public string spriteName;
@@ -19,24 +17,22 @@ public class Fish : MonoBehaviour
     private float speed;
 
     private Vector3 targetPosition;
-    private float timer;
     private Quaternion targetRotation;
     private float initialYPosition;
     private bool hasBeenClicked = false;
 
     void Start()
     {
-        SetNewTargetPosition();
-        timer = changeDirectionInterval;
-        targetRotation = transform.rotation;
         initialYPosition = transform.position.y;
-        speed = 5f; // Defina uma velocidade padrão inicial
+        SetNewTargetPosition();
+        InitializeSpeed();
     }
 
     void Update()
     {
-        // Movimento suave em direção ao alvo
-        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
+        // Movimento contínuo em direção ao alvo
+        transform.position += transform.forward * Time.deltaTime * speed;
+
         // Rotação suave em direção ao alvo
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * smoothRotationSpeed);
 
@@ -44,16 +40,10 @@ public class Fish : MonoBehaviour
         float yOffset = Mathf.Sin(Time.time * verticalSpeed) * swimHeight;
         transform.position = new Vector3(transform.position.x, initialYPosition + yOffset, transform.position.z);
 
-        // Atualiza o temporizador e muda de direção quando necessário
-        timer -= Time.deltaTime;
-        if (timer <= 0f)
+        // Checa a distância até o alvo e define um novo alvo se estiver próximo o suficiente
+        if (Vector3.Distance(transform.position, targetPosition) < 1f)
         {
             SetNewTargetPosition();
-            if (Random.value < rotationChangeProbability)
-            {
-                targetRotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
-            }
-            timer = changeDirectionInterval;
         }
     }
 
@@ -62,6 +52,9 @@ public class Fish : MonoBehaviour
         // Define uma nova posição aleatória dentro do raio máximo
         targetPosition = Random.insideUnitSphere * maxDistanceFromCenter + transform.position;
         targetPosition.y = initialYPosition; // Mantém a posição vertical constante
+
+        // Define a nova rotação para olhar em direção ao novo alvo
+        targetRotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
     }
 
     void OnMouseDown()
@@ -101,7 +94,14 @@ public class Fish : MonoBehaviour
 
         speed = baseSpeed * (1f + Random.Range(-0.2f, 0.2f) * rarityMultiplier);
     }
+
+    void InitializeSpeed()
+    {
+        // Ajusta a velocidade para ser mais rápida ou mais lenta aleatoriamente
+        moveSpeed *= Random.Range(0.5f, 1.5f);
+    }
 }
+
 
 
 

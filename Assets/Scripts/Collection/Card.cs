@@ -48,7 +48,7 @@ public class Card {
         Button buttonComponent = cardObj.AddComponent<Button>();
 
         cardObj.transform.localPosition = position;
-        imageComponent.transform.localScale = new Vector3(3.00f, 3.00f, 3.00f);
+        imageComponent.transform.localScale = new Vector3(5.00f, 5.50f, 5.00f);
 
         lockObj = new GameObject("Lock");
         lockObj.transform.SetParent(cardObj.transform, false);

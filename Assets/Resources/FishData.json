@@ -2,22 +2,6 @@
     "fish": [
 
         {
-            "spriteName": "mussum",
-            "fishName": "Mussum",
-            "popularName": "Cobra d'água, enguia-do-pântano",
-            "scientificName": "Synbranchus marmoratus",
-            "rarity": 0.45,
-            "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
-        },
-        {
-            "spriteName": "mussumRara",
-            "fishName": "Mussum",
-            "popularName": "Cobra d'água, enguia-do-pântano",
-            "scientificName": "Synbranchus marmoratus",
-            "rarity": 0.02,
-            "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
-        },
-        {
             "spriteName": "acara",
             "fishName": "Acará",
             "popularName": "Acará",
@@ -33,6 +17,7 @@
             "rarity": 0.15,
             "description": "Um peixe com escamas e omnívoro. Alimenta-se de uma ampla variedade de alimentos. Normalmente habita locais com águas paradas, mas também podem ser encontrados nos rios, em seus remansos e margens verdejantes. Pode ser encontrado em todo o Brasil, especialmente nas bacias do rio Doce, do rio Paraíba do Sul e do rio São Francisco. Pode chegar aos 25 cm."
         },
+
         {
             "spriteName": "lambari",
             "fishName": "Lambari",
@@ -49,6 +34,24 @@
             "rarity": 0.006,
             "description": "Um pequeno peixe com escamas. É omnívoro e detritívoro, alimentando-se de frutos, sementes e insetos terrestres, vegetais aquáticos, outros peixes e até detritos e sedimentos. Possui coloração prateada, e nadadeiras variando entre amarelo, vermelho e preto. Seu corpo é alongado e um pouco comprimido. Pode ser encontrado por todas as bacias hidrográficas do Brasil."
         },
+
+        {
+            "spriteName": "mussum",
+            "fishName": "Mussum",
+            "popularName": "Cobra d'água, enguia-do-pântano",
+            "scientificName": "Synbranchus marmoratus",
+            "rarity": 0.45,
+            "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
+        },
+        {
+            "spriteName": "mussumRara",
+            "fishName": "Mussum",
+            "popularName": "Cobra d'água, enguia-do-pântano",
+            "scientificName": "Synbranchus marmoratus",
+            "rarity": 0.02,
+            "description": "Um peixe sem escamas, carnívoro, e de hábitos noturnos. Alimenta-se principalmente de crustáceos, moluscos e pequenos peixes. Pode ser encontrado por toda a América do Sul. Normalmente habita lagos, córregos, brejos, pântanos e rios, podendo sobreviver a longos períodos enterrado no substrato."
+        },
+
         {
             "spriteName": "bagre",
             "fishName": "Bagre",
