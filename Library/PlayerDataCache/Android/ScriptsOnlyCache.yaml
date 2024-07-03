@@ -1,8 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - GameManager
+    - Fish
+    - FishInterface
+    - GyroTouchControl
+    - LocationManager
     - LocationProximity
+    - PlayerMoviment
+    - Preview
+    - PreviewCard
+    - ScoreManager
+    - Trash
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -23,8 +31,11 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.ScrollRect
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -42,15 +53,26 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
     - UnityEngine.TextCore.GlyphMetrics
     - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
+    - UnityEngine.UI.AnimationTriggers
+    - UnityEngine.UI.Button/ButtonClickedEvent
+    - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
-  methodsToPreserve: []
+    - UnityEngine.UI.Navigation
+    - UnityEngine.UI.ScrollRect/ScrollRectEvent
+    - UnityEngine.UI.SpriteState
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: FishInterface
+    methodName: Toggle
   sceneClasses:
     Assets/Scenes/BeachScene.unity:
     - Class: 1
@@ -163,6 +185,111 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 111
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 16714}
+    - Class: 114
+      Script: {instanceID: 17450}
+    - Class: 114
+      Script: {instanceID: 17714}
+    - Class: 114
+      Script: {instanceID: 17916}
+    - Class: 114
+      Script: {instanceID: 18204}
+    - Class: 114
+      Script: {instanceID: 20118}
+    - Class: 114
+      Script: {instanceID: 20662}
+    - Class: 114
+      Script: {instanceID: 20812}
+    - Class: 114
+      Script: {instanceID: 21126}
+    - Class: 114
+      Script: {instanceID: 21430}
+    - Class: 114
+      Script: {instanceID: 22160}
+    - Class: 114
+      Script: {instanceID: 24004}
+    - Class: 114
+      Script: {instanceID: 24100}
+    - Class: 114
+      Script: {instanceID: 24104}
+    - Class: 114
+      Script: {instanceID: 29158}
+    - Class: 114
+      Script: {instanceID: 31460}
+    - Class: 114
+      Script: {instanceID: 35420}
+    - Class: 114
+      Script: {instanceID: 35438}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 154
+      Script: {instanceID: 0}
+    - Class: 156
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 218
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/RiverssScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
     - Class: 48
@@ -206,6 +333,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -312,10 +441,10 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 2e2e3dc97eafbbf94fcd799179508eb1
+      Hash: fc366a5be9ebd4ce084b4dc717a98749
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: GameManager
+    className: LocationManager
   - hash:
       serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
@@ -1048,9 +1177,82 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 95650bab4b7dea190e86167cdb840d19
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: FishInterface
+  - hash:
+      serializedVersion: 2
+      Hash: b2dc330311439e8dfc51c34e5488231b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PreviewCard
+  - hash:
+      serializedVersion: 2
+      Hash: b7e87c7766728dec4051ca2a157375af
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Preview
+  - hash:
+      serializedVersion: 2
+      Hash: 6bf7d0621814989dd10afec8144b023a
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerMoviment
+  - hash:
+      serializedVersion: 2
+      Hash: 5700ca370c05a99d95d33a9296b70847
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GyroTouchControl
+  - hash:
+      serializedVersion: 2
+      Hash: 2fc64d7a289be8c88e1f9e1d882ba329
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Fish
+  - hash:
+      serializedVersion: 2
+      Hash: 5eeeaba11b32184ef26567d5b94e4883
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CardImageManager
+  - hash:
+      serializedVersion: 2
+      Hash: 4d09b34a3a79b8fb138dc9d81fce07a3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Trash
+  - hash:
+      serializedVersion: 2
+      Hash: acc0fd76e4fbcd593925d86a9ce2f74e
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: InfoManager
+  - hash:
+      serializedVersion: 2
+      Hash: 3755c3b9a27ff8bcde82715beae850cc
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ControlInterface
+  - hash:
+      serializedVersion: 2
+      Hash: 98f5fcae515505f3f1a51cf53deb1911
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ScoreManager
+  - hash:
+      serializedVersion: 2
+      Hash: 1e941e086fb05fe92456b61624a02f81
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ToggleCollectionButton
   platform: 13
   scenePathNames:
-  - Assets/Scenes/RiverScene.unity
+  - Assets/Scenes/RiverssScene.unity
   - Assets/Scenes/LakeScene.unity
   - Assets/Scenes/BeachScene.unity
-  playerPath: D:/Projetos RV/Builds/Teste02.apk
+  - Assets/Scenes/RiverScene.unity
+  playerPath: D:/Projetos RV/Builds/Teste07.apk
